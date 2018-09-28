@@ -1,16 +1,16 @@
 ﻿using System;
 namespace CoreEscuela.Entidades
 {
-    public class Asignatura
+    public class Calificacion
     {
         public string Id { get; private set; }
         public string Nombre { get; set; }
-        public int Trimestre { get; set; }
+        public double Nota { get; set; }
+        public Asignatura Asignatura { get; set; }
+        public Alumno Alumno { get; set; }
 
-        public Asignatura(string nombre, int trimestre)
+        public Calificacion()
         {
-            Nombre = nombre;
-            Trimestre = trimestre;
             Id = Guid.NewGuid().ToString();
         }
     }
