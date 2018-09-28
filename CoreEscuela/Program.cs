@@ -1,5 +1,6 @@
 ﻿using System;
 using CoreEscuela.Entidades;
+using System.Collections.Generic;
 
 namespace CoreEscuela
 {
@@ -8,27 +9,33 @@ namespace CoreEscuela
         static void Main(string[] args)
         {
             var escuela = new Escuela("UAdeO");
-            // escuela.Id = Guid.NewGuid().ToString();
-            Console.WriteLine(escuela.Id);
-            Console.WriteLine(escuela.Nombre);
-
-            var alumno = new Alumno
+            var sistemas = new Carrera("Sistemas computacionales");
+            escuela.Carreras.Add(sistemas);
+            var conta = new Carrera("Contabilidad");
+            escuela.Carreras.Add(conta);
+            Console.WriteLine("Escuela: " + escuela.Nombre);
+            foreach (var carrera in escuela.Carreras)
             {
-                Nombre = "Bidkar",
-                Apellidos = "Aragón Cárdenas"
-            };
-            Console.WriteLine("Alumno: " + alumno.NombreCompleto);
+                Console.WriteLine("Carrera: " + carrera.Nombre);
+            }
 
-            // Arreglos
-            string[] cadenas = { "cadena1", "cadena2", "cadena3" };
-            Console.WriteLine(cadenas[2]);
-
-            Carrera[] carreras = {
-                new Carrera("Sistemas"),
-                new Carrera("Civil"),
-                new Carrera("Admon")
+            //var comp7 = new Asignatura("Computacion VII", 7);
+            //var derhum = new Asignatura("Derechos Humanos", 7);
+            //sistemas.Asignaturas.Add(comp7);
+            //sistemas.Asignaturas.Add(derhum);
+            var materias = new List<Asignatura>
+            {
+                new Asignatura("Computacion VII", 7),
+                new Asignatura("Derechos Humanos", 7)
             };
-            Console.WriteLine(carreras[1].Nombre);
+            sistemas.Asignaturas.AddRange(materias);
+            foreach (var carrera in escuela.Carreras)
+            {
+                foreach (var asignatura in carrera.Asignaturas)
+                {
+                    Console.WriteLine($"Carrera: {carrera.Nombre} Asignatura: {asignatura.Nombre}");
+                }
+            }
         }
     }
 }

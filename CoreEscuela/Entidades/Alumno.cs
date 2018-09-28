@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace CoreEscuela.Entidades
 {
     public class Alumno
@@ -15,10 +17,13 @@ namespace CoreEscuela.Entidades
         {
             get => Nombre + " " + Apellidos;
         }
+        public List<Calificacion> Calificaciones { get; set; }
 
         public Alumno()
         {
             Id = Guid.NewGuid().ToString();
+            Calificaciones = new List<Calificacion>();
         }
+
     }
 }

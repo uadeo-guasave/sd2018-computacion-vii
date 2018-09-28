@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+
 namespace CoreEscuela.Entidades
 {
     public class Escuela
@@ -16,12 +18,13 @@ namespace CoreEscuela.Entidades
         public string CorreoElecronico { get; set; }
         public string UnidadRegional { get; set; }
         public bool EsExtension { get; set; }
-        public Carrera[] Carreras { get; set; }
+        public List<Carrera> Carreras { get; set; }
 
         public Escuela(string nombre)
         {
             Id = Guid.NewGuid().ToString();
             Nombre = nombre;
+            Carreras = new List<Carrera>();
         }
 
     }
