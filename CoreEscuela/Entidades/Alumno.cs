@@ -3,11 +3,9 @@ using System.Collections.Generic;
 
 namespace CoreEscuela.Entidades
 {
-    public class Alumno
+    public class Alumno : ObjetoEscuela
     {
-        public string Id { get; private set; }
         public string Matricula { get; set; }
-        public string Nombre { get; set; }
         public string Apellidos { get; set; }
         public string Curp { get; set; }
         public DateTime FechaDeNacimiento { get; set; }
@@ -19,9 +17,10 @@ namespace CoreEscuela.Entidades
         }
         public List<Calificacion> Calificaciones { get; set; }
 
-        public Alumno()
+        public Alumno(string nombre, string apellidos) : base()
         {
-            Id = Guid.NewGuid().ToString();
+            Nombre = nombre;
+            Apellidos = apellidos;
             Calificaciones = new List<Calificacion>();
         }
 

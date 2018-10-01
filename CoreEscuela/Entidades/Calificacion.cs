@@ -1,17 +1,15 @@
 ﻿using System;
 namespace CoreEscuela.Entidades
 {
-    public class Calificacion
+    public class Calificacion : ObjetoEscuela
     {
-        public string Id { get; private set; }
-        public string Nombre { get; set; }
         public double Nota { get; set; }
         public Asignatura Asignatura { get; set; }
         public Alumno Alumno { get; set; }
 
-        public Calificacion()
+        public Calificacion(string nombre, Asignatura asignatura, Alumno alumno) : base()
         {
-            Id = Guid.NewGuid().ToString();
+
         }
     }
 }

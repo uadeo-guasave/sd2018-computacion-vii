@@ -3,15 +3,8 @@ using System.Collections.Generic;
 
 namespace CoreEscuela.Entidades
 {
-    public class Escuela
+    public class Escuela : ObjetoEscuela
     {
-        private string id;
-        public string Id
-        {
-            get => id;
-            private set => id = value;
-        }
-        public string Nombre { get; set; }
         public string Domicilio { get; set; }
         public string Telefono { get; set; }
         public string SitioWeb { get; set; }
@@ -20,10 +13,8 @@ namespace CoreEscuela.Entidades
         public bool EsExtension { get; set; }
         public List<Carrera> Carreras { get; set; }
 
-        public Escuela(string nombre)
+        public Escuela(string nombre) : base(nombre)
         {
-            Id = Guid.NewGuid().ToString();
-            Nombre = nombre;
             Carreras = new List<Carrera>();
         }
 

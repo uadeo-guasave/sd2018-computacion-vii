@@ -1,6 +1,7 @@
 ﻿using System;
 using CoreEscuela.Entidades;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CoreEscuela
 {
@@ -35,6 +36,32 @@ namespace CoreEscuela
                 {
                     Console.WriteLine($"Carrera: {carrera.Nombre} Asignatura: {asignatura.Nombre}");
                 }
+            }
+
+            string[] nombres = { "Juan", "Maria", "Jose", "Pedro", "Guadalupe" };
+            string[] paternos = { "Lopez", "Beltran", "Leyva", "Bon", "Leon" };
+            string[] maternos = { "Quintero", "Gaxiola", "Garcia", "Castro", "Sandoval" };
+
+            //foreach (var nombre in nombres)
+            //{
+            //    foreach (var paterno in paternos)
+            //    {
+            //        foreach (var materno in maternos)
+            //        {
+            //            Console.WriteLine($"{nombre} {paterno} {materno}");
+            //        }
+            //    }
+            //}
+            IEnumerable<Alumno> als = from nombre in nombres
+                                          from paterno in paternos
+                                          from materno in maternos
+                select new Alumno(nombre, $"{paterno} {materno}");
+
+            var alumnos = als.OrderBy(alumno => alumno.Id).Take(20).ToList();
+
+            foreach (var alumno in alumnos)
+            {
+                Console.WriteLine(alumno.Id + " " + alumno.NombreCompleto);
             }
         }
     }
