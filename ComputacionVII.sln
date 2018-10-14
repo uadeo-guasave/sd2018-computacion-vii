@@ -5,7 +5,9 @@ VisualStudioVersion = 15.0.28010.2016
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HolaUADEO", "HolaUADEO\HolaUADEO.csproj", "{3A34716A-C86C-4751-B91C-56CE42B07830}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CoreEscuela", "CoreEscuela\CoreEscuela.csproj", "{C27D3787-66BA-42FB-88F1-AACC41125C0A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CoreEscuela", "CoreEscuela\CoreEscuela.csproj", "{C27D3787-66BA-42FB-88F1-AACC41125C0A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "QueOnda", "QueOnda\QueOnda.csproj", "{5CA17009-8221-494F-9C8D-B969B48602F0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{C27D3787-66BA-42FB-88F1-AACC41125C0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C27D3787-66BA-42FB-88F1-AACC41125C0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C27D3787-66BA-42FB-88F1-AACC41125C0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CA17009-8221-494F-9C8D-B969B48602F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CA17009-8221-494F-9C8D-B969B48602F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CA17009-8221-494F-9C8D-B969B48602F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CA17009-8221-494F-9C8D-B969B48602F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
