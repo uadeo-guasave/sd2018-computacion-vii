@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Net.Mail;
-using System.Text;
 
 namespace QueOnda.Entidades
 {
-    class Usuario
+    public class Usuario
     {
         public int Id { get; set; }
 
@@ -27,5 +24,8 @@ namespace QueOnda.Entidades
 
         [MaxLength(30)]
         public string Telefono { get; set; }
+
+        public List<Mensaje> MensajesEnviados { get; set; }
+        public List<MensajesRecibidos> MensajesRecibidos { get; set; }
     }
 }

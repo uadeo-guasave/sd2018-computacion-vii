@@ -34,10 +34,16 @@ namespace QueOnda.Entidades
                     });
             });
 
+            modelBuilder.Entity<Mensaje>(mensaje =>
+            {
+
+            });
+
             base.OnModelCreating(modelBuilder);
         }
 
 
         public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Mensaje> Mensajes { get; set; }
     }
 }
